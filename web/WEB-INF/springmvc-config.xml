@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- spring mvc配置文件中，映射器、适配器与视图解析器信息配置 -->
+    <!-- 配置annotation类型的处理器映射器 -->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
+    <!-- 配置annotation类型的处理器适配器 -->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <!-- 将请求信息转换为String字符串 -->
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter" />
+                <!-- 将表单数据读取到MultiValueMap中 -->
+                <bean class="org.springframework.http.converter.FormHttpMessageConverter" />
+                <!-- 继承自FormHttpMessageConverter，如果部分表单属性是XML数据，则可用该转换器转换 -->
+                <bean class="org.springframework.http.converter.xml.XmlAwareFormHttpMessageConverter" />
+                <!-- 读写org.springframework.core.io.Resource对象 -->
+                <bean class="org.springframework.http.converter.ResourceHttpMessageConverter" />
+                <!-- 读写BufferedImage对象 -->
+                <bean class="org.springframework.http.converter.BufferedImageHttpMessageConverter" />
+                <!-- 读写二进制数据 -->
+                <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+                <!-- 读写javax.xml.transform.Source类型的数据 -->
+                <bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter" />
+                <!-- 通过Spring的org.springframework.oxm.Marshalling(将Java对象转换成XML)和Unmarshaller(将XML解析为Java对象)读写XML消息 -->
+                <bean class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter" />
+                <!-- 通过JAXB2读写XML消息，将请求消息转换成注解XmlRootElement和XmlType作用的类中 -->
+                <bean class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter" />
+                <!-- 利用Jackson开源类包读写JSON数据 -->
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+                <!-- 能够读写泛型类T为com.sun.syndication.feed.rss.Channel类型的RSS种子消息，读取application/rss+xml类型的数据，响应application/rss+xml类型的数据 -->
+                <!--<bean class="org.springframework.http.converter.feed.RssChannelHttpMessageConverter" />-->
+                <!-- 能够读写泛型类T为com.sun.syndication.feed.atom.Feed类型的RSS种子消息，读取application/atom+xml类型的数据，响应application/atom+xml类型的数据 -->
+                <!--<bean class="org.springframework.http.converter.feed.AtomFeedHttpMessageConverter" />-->
+            </list>
+        </property>
+    </bean>
+    <!-- 视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 视图路径前缀 -->
+        <property name="prefix">
+            <value>/WEB-INF/content/jsp-page/</value>
+        </property>
+        <!-- 视图路径后缀 -->
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+
+
+    <!-- spring可以自动去扫描base-pack下面的包或者子包下面的Java文件，如果扫描到有Spring的相关注解的类，则把这些类注册为Spring的bean -->
+    <!-- 所有的控制器类都存放在com.dongwu.controller路径下 -->
+    <context:component-scan base-package="com.dongwu.controller" />
+
+    <!-- 设置配置方案 -->
+    <mvc:annotation-driven/>
+    <!-- 使用默认的Servlet来响应静态文件 -->
+    <mvc:default-servlet-handler/>
+</beans>
