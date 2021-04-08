@@ -10,7 +10,9 @@
         <title>home page</title>
     </head>
     <body>
-        欢迎${requestScope.get("msg")}登录本系统!
-        <a href="/json/bookinfo">json传递测试</a>
+        欢迎${requestScope.get("msg")}登录本系统!<br>
+        <a href="/json/bookinfobyjackson">JackSon JSON传递测试</a><br>
+        <a href="/json/bookinfobyfastjson">FastJson JSON传递测试</a><br>
+        <a href="/json/bookinfobyresponsebody">ResponseBody JSON传递测试</a>
     </body>
 </html>

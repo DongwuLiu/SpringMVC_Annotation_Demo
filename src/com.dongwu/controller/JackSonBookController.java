@@ -18,14 +18,14 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 @RequestMapping(value = "/json")
-public class BookController {
-    private static final Log logger = LogFactory.getLog(BookController.class);
+public class JackSonBookController {
+    private static final Log logger = LogFactory.getLog(JackSonBookController.class);
 
     //@RequestBody根据json数据，转换成对应的Object
-    @RequestMapping(value = "/testRequestBody")
+    @RequestMapping(value = "/testRequestBodyJackson")
     public void setJson(@RequestBody Book book,
                         HttpServletResponse response) throws Exception {
-        logger.info("liudw:BookController------setJson方法被调用");
+        logger.info("liudw:JackSonBookController------setJson方法被调用");
         //ObjectMapper类是Jackson库的主要类。它提供一些功能将Java对象转换成对应的JSON格式数据
         ObjectMapper mapper = new ObjectMapper();
 
@@ -37,10 +37,10 @@ public class BookController {
         response.getWriter().println(mapper.writeValueAsString(book));
     }
 
-    @RequestMapping(value = "/bookinfo")
+    @RequestMapping(value = "/bookinfobyjackson")
     public String bookInfo(Model model) {
-        logger.info("liudw:BookController------bookInfo方法被调用");
+        logger.info("liudw:JackSonBookController------bookInfo方法被调用");
 
-        return "receiveJSON";
+        return "jacksonreceiveJSON";
     }
 }

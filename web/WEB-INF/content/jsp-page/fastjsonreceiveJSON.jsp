@@ -17,7 +17,7 @@
             });
 
             function testRequestBody() {
-                $.ajax("${pageContext.request.contextPath}/json/testRequestBody",
+                $.ajax("${pageContext.request.contextPath}/json/testRequestBodyFastjson",
                     {
                         dataType : "json",  //预期服务器返回的数据类型
                         type : "post",      //请求方式：get或post
