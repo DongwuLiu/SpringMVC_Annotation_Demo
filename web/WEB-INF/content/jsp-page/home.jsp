@@ -13,6 +13,7 @@
         欢迎${requestScope.get("msg")}登录本系统!<br>
         <a href="/json/bookinfobyjackson">JackSon JSON传递测试</a><br>
         <a href="/json/bookinfobyfastjson">FastJson JSON传递测试</a><br>
-        <a href="/json/bookinfobyresponsebody">ResponseBody JSON传递测试</a>
+        <a href="/json/bookinfobyresponsebody">ResponseBody JSON传递测试</a><br>
+        <a href="/xmlbookinfo">XML数据发送/接收测试</a>
     </body>
 </html>
