@@ -19,9 +19,6 @@
             $.post("${pageContext.request.contextPath}/json/testRequestBodyResponseBody", null,
             function (data) {
                 $.each(data, function () {
-                    //创建一个<tr>对象
-                    var tr = $("<tr align='left'/>");
-
                     /*
                     *
                     * appendTo()与append()方法的作用（界面效果）相同：都是在元素(内部)的结尾添加另一个元素
@@ -32,18 +29,23 @@
                     * */
 
                     //方法一：
-                    //向创建的<tr>对象中添加<th>、<td>，并将data中的值赋给<th>、<td>对象后添加到<tr>中
-                    // $("<th/>").html(this.id).appendTo(tr);
-                    // $("<td/>").html(this.name).appendTo(tr);
-                    // $("<td/>").html(this.author).appendTo(tr);
-                    // //将<tr>对象添加到id为booktable的表格中
-                    // $("#booktable").append(tr);
+                    //创建一个<tr>对象
+                    var tr = $("<tr align='left'/>");
+
+                    // 向创建的<tr>对象中添加<th>、<td>，并将data中的值赋给<th>、<td>对象后添加到<tr>中
+                    $("<th/>").html(this.id).appendTo(tr);
+                    $("<td/>").html(this.name).appendTo(tr);
+                    $("<td/>").html(this.author).appendTo(tr);
+                    //将<tr>对象添加到id为booktable的表格中
+                    $("#booktable").append(tr);
 
                     //方法二：
-                    tr.append($("<th/>").html(this.id+"d"));
-                    tr.append($("<td/>").html(this.name+"d"));
-                    tr.append($("<td/>").html(this.author+"d"));
-                    tr.appendTo($("#booktable"));
+                    var tr1 = $("<tr align='left'/>");
+
+                    tr1.append($("<th/>").html(this.id+"d"));
+                    tr1.append($("<td/>").html(this.name+"d"));
+                    tr1.append($("<td/>").html(this.author+"d"));
+                    tr1.appendTo($("#booktable"));
                 })
             }, "json");
         }
