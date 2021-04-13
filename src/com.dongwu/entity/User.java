@@ -23,6 +23,9 @@ public class User implements Serializable {
     private String result;
     private String size;
     private List<Attitude> attitudes;
+    private String color;
+    private String probabilityId;
+    private String motion;
 
     public User() {
         super();
@@ -156,6 +159,30 @@ public class User implements Serializable {
 
     public void setAttitudes(List<Attitude> attitudes) {
         this.attitudes = attitudes;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getProbabilityId() {
+        return probabilityId;
+    }
+
+    public void setProbabilityId(String probabilityId) {
+        this.probabilityId = probabilityId;
+    }
+
+    public String getMotion() {
+        return motion;
+    }
+
+    public void setMotion(String motion) {
+        this.motion = motion;
     }
 
     @Override

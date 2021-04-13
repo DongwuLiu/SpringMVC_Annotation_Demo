@@ -15,6 +15,7 @@
         <a href="/json/bookinfobyfastjson">FastJson JSON传递测试</a><br>
         <a href="/json/bookinfobyresponsebody">ResponseBody JSON传递测试</a><br>
         <a href="/xmlbookinfo">XML数据发送/接收测试</a><br>
-        <a href="/registerForm">Form表单</a>
+        <a href="/registerForm">Form表单</a><br>
+        <a href="/labelForm">Form标签</a>
     </body>
 </html>
