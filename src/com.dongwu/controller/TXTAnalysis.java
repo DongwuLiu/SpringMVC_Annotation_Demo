@@ -23,7 +23,7 @@ public class TXTAnalysis {
 
 	public static void readTxtFile (String filePath) {
 		try {
-			String encoding = "GBK";
+			String encoding = "UTF-8";
 			File file = new File(filePath);
 			if (file.isFile() && file.exists()) {
 				InputStreamReader read = new InputStreamReader(new FileInputStream(file), encoding);

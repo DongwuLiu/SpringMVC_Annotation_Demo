@@ -33,6 +33,28 @@ public class MyListener implements ServletContextListener {
         System.out.println("                       ‘=---=’                      ");
         System.out.println("                                                    ");
         System.out.println("....................佛祖开光 ,永无BUG...................");
+        System.out.println();
+        System.out.println();
+
+        System.out.println("                    .::::.");
+        System.out.println("                  .::::::::.");
+        System.out.println("                 ::::::::::: ");
+        System.out.println("             ..:::::::::::'");
+        System.out.println("           '::::::::::::'");
+        System.out.println("             .::::::::::");
+        System.out.println("        '::::::::::::::..");
+        System.out.println("             ..::::::::::::.");
+        System.out.println("           ``::::::::::::::::");
+        System.out.println("            ::::``:::::::::'        .:::.");
+        System.out.println("           ::::'   ':::::'       .::::::::.");
+        System.out.println("         .::::'      ::::     .:::::::'::::.");
+        System.out.println("        .:::'       :::::  .:::::::::' ':::::.");
+        System.out.println("       .::'        :::::.:::::::::'      ':::::.");
+        System.out.println("      .::'         ::::::::::::::'         ``::::.");
+        System.out.println("  ...:::           ::::::::::::'              ``::.");
+        System.out.println(" ```` ':.          ':::::::::'                  ::::..");
+        System.out.println("                    '.:::::'                    ':'````..");
+        System.out.println("....................妹纸养眼 ,思路上天...................");
     }
 
     @Override

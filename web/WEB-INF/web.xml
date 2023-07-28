@@ -27,10 +27,12 @@
     </servlet-mapping>
 
     <absolute-ordering />
-    
+
+    <!-- 修改项目运行时，默认访问的页面地址（不添加当前配置时，默认访问index.jsp页面） start -->
     <welcome-file-list>
         <welcome-file>/WEB-INF/content/jsp-page/login.jsp</welcome-file>
     </welcome-file-list>
+    <!-- 修改项目运行时，默认访问的页面地址（不添加当前配置时，默认访问index.jsp页面） end -->
 
     <!-- 项目运行时，控制台输出指定图片或文案 -->
     <listener>
